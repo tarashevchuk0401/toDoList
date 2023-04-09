@@ -1,0 +1,16 @@
+<!-- <button (click)="show()">show</button> -->
+<div class="writeNew">
+  <textarea [(ngModel)]="newText" cols="30" rows="2"></textarea>
+  <button (click)="addItem()">Add new</button>
+</div>
+<section>
+  <ul *ngFor="let item of itemsList">
+    <div class="container">
+      <div class="item">{{item.title}}</div>
+    </div>
+    <div class="buttons">
+      <button routerLink="/item-page/{{item.id}}">Edit</button>
+      <button (click)="deleteItem(item.id)">Delete</button>
+    </div>
+  </ul>
+</section>

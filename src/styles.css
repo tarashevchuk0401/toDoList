@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+*{
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+    box-sizing: border-box  ;
+}
+
+body{
+    background-color: rgb(128, 128, 232);
+}
+li{
+
+    list-style-type: none;
+    background-color: rgb(163, 163, 163);
+    max-width: 60%;
+    min-height: 2rem;
+    max-height: 10rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+button {
+    background-color: rgb(120, 241, 87);
+    padding: 0.5rem;
+    border-radius: .5rem;
+    color: rgb(63, 63, 214);
+    font-weight: 900;
+    font-size: 1.2rem;
+    margin: 0.5rem;
+}
+
+button:hover{
+    opacity: .8;
+}
+
+ul:hover{
+    opacity: .8;
+}

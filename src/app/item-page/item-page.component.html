@@ -1,0 +1,10 @@
+<main>
+  <div class="item_text" *ngFor="let item of itemResult">
+    <p #title>{{item.title}}</p>
+  </div>
+  <textarea cols="30" rows="10" [(ngModel)]="changedText"></textarea>
+  <div class="buttons">
+    <button routerLink="/list">Back</button>
+    <button (click)="editItem()" routerLink="/list">Save</button>
+  </div>
+</main>

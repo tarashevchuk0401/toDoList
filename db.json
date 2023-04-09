@@ -1,0 +1,38 @@
+{
+  "posts": [
+    {
+      "id": 0.983045519169,
+      "title": "лампочка в машині",
+      "inProgress": true
+    },
+    {
+      "id": 0.49354357981649266,
+      "title": "бла бла кар",
+      "inProgress": true
+    },
+    {
+      "id": 0.3051823134595628,
+      "title": "забрати сертифікат",
+      "inProgress": true
+    },
+    {
+      "id": 0.6299526625521286,
+      "title": "gohome\n",
+      "inProgress": true
+    },
+    {
+      "id": 0.5321477036494149,
+      "title": "alksdmasd",
+      "inProgress": true
+    },
+    {
+      "id": 0.8017980915589529,
+      "title": "TEST\n",
+      "inProgress": true
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
