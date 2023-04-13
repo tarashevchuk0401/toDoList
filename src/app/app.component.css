@@ -17,3 +17,8 @@ p{
     font-weight: 900;
 }
 
+.function {
+    display: flex;
+    justify-content: end;
+}
+

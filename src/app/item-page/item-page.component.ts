@@ -13,6 +13,8 @@ export class ItemPageComponent implements OnInit {
   itemResult: Item[] = [];
   curentId: string = '';
   changedText: string = '';
+  saved: boolean = false;
+    
 
   constructor(private serverService: ServerService, private activatedRoute: ActivatedRoute) {
   }
@@ -27,9 +29,14 @@ export class ItemPageComponent implements OnInit {
   }
 
   editItem(){
+    
+
     this.serverService.editItem(this.curentId, this.changedText).subscribe((item: any) => {
-      this.editItem = item
+      this.editItem = item;
+      
     })
+
+    this.saved = true;
   }
 
 }

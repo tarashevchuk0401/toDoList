@@ -2,11 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListComponent } from './list/list.component';
 import { ItemPageComponent } from './item-page/item-page.component';
+import { LoginComponent } from './login/login.component';
+import { guard } from './services/guard.service';
+import { exitGuard } from './services/exit-guard';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
-  {path: '', component: ListComponent},
-  {path: 'list', component: ListComponent},
-  {path: 'item-page/:id', component: ItemPageComponent},
+  {path: '', component: LoginComponent},
+  {path: 'list', component: ListComponent , canActivate: [guard]},
+  {path: 'item-page/:id', component: ItemPageComponent, canActivate: [guard], canDeactivate: [exitGuard]},
+  {path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({
