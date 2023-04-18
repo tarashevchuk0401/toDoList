@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthService } from './services/auth.service';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DoneTasksComponent } from './done-tasks/done-tasks.component';
+import { ResolverService } from './services/resolver.service';
 
 
 @NgModule({
@@ -30,7 +31,7 @@ import { DoneTasksComponent } from './done-tasks/done-tasks.component';
     ReactiveFormsModule
     
   ],
-  providers: [AuthService],
+  providers: [AuthService, ResolverService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

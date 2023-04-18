@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServerService } from '../services/server.service';
 import { Item } from '../list/Item';
 import { filter, map } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-done-tasks',
@@ -14,16 +15,21 @@ export class DoneTasksComponent implements OnInit{
   allItems: Item[] = [];
   testItems: Item[] = [];
 
-  constructor(private serverService: ServerService){}
+  constructor(private serverService: ServerService, private activatedRoute: ActivatedRoute){
+    this.allItems = activatedRoute.snapshot.data['doneTask'];
+    this.doneItems = this.allItems.filter(item => item.done === true );
+    
+  }
 
   ngOnInit(): void {
-    this.serverService.getAll().subscribe((d: any) => this.allItems = d );
-    setTimeout(() => {this.show()},100)
-    // this.serverService.getAll().pipe(filter((item: any) => item.done === true)).subscribe((d: any) => this.allItems = d );
+    //  this.serverService.getAll().subscribe((d: any) => this.allItems = d );
+    //  setTimeout(() => {this.showOnlyDone()},100)
+
+    //  this.serverService.getAll().pipe(filter((item: any) => item.done === true)).subscribe((d: any) => this.allItems = d );
   }
 
-  show(){
-    this.doneItems = this.allItems.filter(item => item.done === true );
+  // showOnlyDone(){
+  //   this.doneItems = this.allItems.filter(item => item.done === true );
 
-  }
+  // }
 }
