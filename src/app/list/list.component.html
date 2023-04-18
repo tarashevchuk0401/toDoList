@@ -5,6 +5,7 @@
 </div>
 <section>
   <ul *ngFor="let item of itemsList">
+    <button (click)="matchAsDone(item.id)">Done</button>
     <div class="container">
       <div class="item">{{item.title}}</div>
     </div>
@@ -14,3 +15,4 @@
     </div>
   </ul>
 </section>
+

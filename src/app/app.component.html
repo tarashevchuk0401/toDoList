@@ -1,10 +1,10 @@
 <main>
     <div class="logo">
-        <p>ToDoList</p>
+        <div class="toDo" routerLink="list">ToDoList</div>
     </div>
     <div class="function">
+        <button routerLink="done-tasks">Done Tasks</button>
         <button (click)="logOut()">Sign Out</button>
-
     </div>
 </main>
 <router-outlet></router-outlet>

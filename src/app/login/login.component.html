@@ -2,7 +2,7 @@
     <p>Please enter name and password</p>
     <form [formGroup]="logInFrom" (ngSubmit)="submit()">
         <input type="text" formControlName="name" placeholder="name"><br>
-        <input type="text" formControlName="password" placeholder="password"><br>
+        <input type="password" formControlName="password" placeholder="password"><br>
         <button (click)="submit()">Sign In</button>
     </form>
 </main>

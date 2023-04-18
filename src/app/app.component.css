@@ -10,11 +10,12 @@ h1{
 
 }
 
-p{
+.toDo{
     color: rgb(120, 241, 87);
     margin: 1rem;
     font-size: 4rem;
     font-weight: 900;
+    cursor: pointer;
 }
 
 .function {

@@ -27,4 +27,8 @@ export class ServerService {
     return this.serverClient.put(this.path + '/' + id, {id: Math.random(), title: editedText, inProgress: true})
   }
 
+  matchAsDone(id: string, inProgress:any){
+    return this.serverClient.patch(this.path + '/' + id, inProgress)
+  }
+
 }

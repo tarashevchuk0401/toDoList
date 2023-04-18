@@ -10,6 +10,7 @@ import { ItemPageComponent } from './item-page/item-page.component';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './services/auth.service';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { DoneTasksComponent } from './done-tasks/done-tasks.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     ListComponent,
     ItemPageComponent,
     LoginComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DoneTasksComponent
   ],
   imports: [
     BrowserModule,

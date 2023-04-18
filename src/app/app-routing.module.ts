@@ -6,10 +6,12 @@ import { LoginComponent } from './login/login.component';
 import { guard } from './services/guard.service';
 import { exitGuard } from './services/exit-guard';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { DoneTasksComponent } from './done-tasks/done-tasks.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'list', component: ListComponent , canActivate: [guard]},
+  {path: 'done-tasks', component: DoneTasksComponent , canActivate: [guard]},
   {path: 'item-page/:id', component: ItemPageComponent, canActivate: [guard], canDeactivate: [exitGuard]},
   {path: '**', component: NotFoundComponent}
 ];

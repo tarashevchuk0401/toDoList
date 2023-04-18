@@ -1,19 +1,29 @@
 {
   "posts": [
     {
-      "id": 0.983045519169,
-      "title": "лампочка в машині",
-      "inProgress": true
+      "id": 0.27542353166079736,
+      "title": "First Task\n",
+      "done": false
     },
     {
-      "id": 0.49354357981649266,
-      "title": "бла бла кар",
-      "inProgress": true
+      "id": 0.08965199900796295,
+      "title": "Second task",
+      "done": false
     },
     {
-      "id": 0.7885921802923614,
-      "title": "taasss\n\n",
-      "inProgress": true
+      "id": 0.2708423236117805,
+      "title": "edit",
+      "done": true
+    },
+    {
+      "id": 0.18580092523069358,
+      "title": "asd",
+      "done": true
+    },
+    {
+      "id": 0.9883973196671643,
+      "title": "Hello world!",
+      "done": true
     }
   ],
   "comments": [],

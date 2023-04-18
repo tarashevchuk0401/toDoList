@@ -1,0 +1,26 @@
+.item {
+    border: 2px solid black;
+    min-height: 3.2rem;
+    max-height: 10rem;
+    overflow: auto;
+    width: 30rem;
+    padding: .3rem;
+    border-radius: 1rem;
+    background-color: rgb(156, 157, 157);
+}
+
+
+
+section {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+}

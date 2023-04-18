@@ -1,5 +1,5 @@
 export interface Item {
     id:number,
     title: string,
-    inProgress: boolean
+    done: boolean
 }
