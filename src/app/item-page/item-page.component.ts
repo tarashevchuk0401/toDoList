@@ -22,7 +22,7 @@ export class ItemPageComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-     this.curentId = this.activatedRoute.snapshot.params['id'];
+     this.curentId = this.activatedRoute.snapshot.params['id']; 
 
     this.serverService.getAll().pipe(takeUntil(this.destroyed$)).subscribe((item: any) => {
       let result = item.find((item: any) => item.id === +this.curentId);

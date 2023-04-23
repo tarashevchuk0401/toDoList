@@ -1,32 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ServerService } from '../services/server.service';
 import { Item } from './Item';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListComponent implements OnInit {
+export class ListComponent implements OnInit, OnDestroy {
 
   itemsList: Item[] = [];
   newText: string = '';
   isDone: any = {
     done: true,
   }
+  destroy$ = new Subject<void>();
 
   constructor(private serverService: ServerService) { }
 
   ngOnInit(): void {
-    this.serverService.getAll().subscribe((d: any) => {
+    this.serverService.getAll().pipe(takeUntil(this.destroy$)).subscribe((d: any) => {
       this.itemsList = d;
-      console.log(d)
     })
+  }
 
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   show() {
-    this.serverService.getAll().subscribe((d: any) => this.itemsList = d)
+    this.serverService.getAll().pipe(takeUntil(this.destroy$)).subscribe((d: any) => this.itemsList = d)
   }
 
   addItem() {
@@ -35,19 +40,19 @@ export class ListComponent implements OnInit {
         {
           id: Math.random(), title: this.newText, done: false,
         }
-      ).subscribe((d: any) => this.itemsList = d);
+      ).pipe(takeUntil(this.destroy$)).subscribe((d: any) => this.itemsList = d);
     this.show();
     this.newText = '';
   }
 
   deleteItem(id: number) {
-    this.serverService.deleteItem(id.toString()).subscribe((d: any) => this.itemsList = d)
+    this.serverService.deleteItem(id.toString()).pipe(takeUntil(this.destroy$)).subscribe((d: any) => this.itemsList = d)
     this.show();
     console.log(id)
   }
 
   matchAsDone(id: number) {
-    this.serverService.matchAsDone(id.toString(), this.isDone).subscribe((d: any) => this.itemsList = d);
+    this.serverService.matchAsDone(id.toString(), this.isDone).pipe(takeUntil(this.destroy$)).subscribe((d: any) => this.itemsList = d);
     this.show();
   }
 
