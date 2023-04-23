@@ -27,8 +27,7 @@ export class LoginComponent {
       this.auth.logIn();
       this.router.navigate(['list']);
     }
-    else alert('name: admin ; password: 1234')
-
+    else alert('name: admin ; password: 1234');
   }
 
 }

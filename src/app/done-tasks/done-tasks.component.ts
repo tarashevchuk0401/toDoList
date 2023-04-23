@@ -15,13 +15,15 @@ export class DoneTasksComponent implements OnInit{
   allItems: Item[] = [];
   testItems: Item[] = [];
 
-  constructor(private serverService: ServerService, private activatedRoute: ActivatedRoute){
-    this.allItems = activatedRoute.snapshot.data['doneTask'];
-    this.doneItems = this.allItems.filter(item => item.done === true );
-    
-  }
+  constructor(private serverService: ServerService, private activatedRoute: ActivatedRoute){}
+
+  // Should I use async pipe??
 
   ngOnInit(): void {
+
+    this.allItems = this.activatedRoute.snapshot.data['doneTask'];
+    this.doneItems = this.allItems.filter(item => item.done === true );
+
     //  this.serverService.getAll().subscribe((d: any) => this.allItems = d );
     //  setTimeout(() => {this.showOnlyDone()},100)
 
